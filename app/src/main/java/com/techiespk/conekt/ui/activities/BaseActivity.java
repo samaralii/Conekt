@@ -1,4 +1,4 @@
-package com.techiespk.conekt;
+package com.techiespk.conekt.ui.activities;
 
 import android.support.annotation.LayoutRes;
 import android.support.v7.app.AppCompatActivity;
@@ -14,5 +14,7 @@ public class BaseActivity extends AppCompatActivity {
         super.setContentView(layoutResID);
 
         //initializing important things here
+
+
     }
 }
