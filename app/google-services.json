@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "467426555380",
+    "firebase_url": "https://testproj-9b057.firebaseio.com",
+    "project_id": "testproj-9b057",
+    "storage_bucket": "testproj-9b057.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:467426555380:android:b586512014c7a332",
+        "android_client_info": {
+          "package_name": "techiespk.firebaseexample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "467426555380-f39dfonbbqb403s7n4lac69rmiosi6ia.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGZHedSFrffOwlrNlnwjJXc9tYoDYd9PM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:467426555380:android:370003fe7011dd55",
+        "android_client_info": {
+          "package_name": "com.techiespk.conekt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "467426555380-f39dfonbbqb403s7n4lac69rmiosi6ia.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGZHedSFrffOwlrNlnwjJXc9tYoDYd9PM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
