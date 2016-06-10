@@ -1,11 +1,10 @@
 package com.techiespk.conekt.ui.activities;
 
 import android.os.Bundle;
-import android.support.annotation.IdRes;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -16,7 +15,10 @@ import com.techiespk.conekt.R;
  */
 public class BaseActivity extends AppCompatActivity {
 
-    Toolbar toolbar;
+    protected Toolbar toolbar;
+    protected ActionBar actionBar;
+    protected FragmentTransaction fragmentTransaction;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -33,21 +35,21 @@ public class BaseActivity extends AppCompatActivity {
         }
 
         setSupportActionBar(toolbar);
+        actionBar = getSupportActionBar();
 
     }
 
-    protected void openFragment(@IdRes int id, Fragment fragment, String tag) {
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(id, fragment, tag);
-        ft.addToBackStack(null);
-        ft.commit();
+
+    public FragmentTransaction openFragment() {
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        return fragmentTransaction;
+
     }
 
-    protected void openFragment(@IdRes int id, Fragment fragment, String tag, Bundle b) {
-        fragment.setArguments(b);
-        openFragment(id, fragment, tag);
+    public ActionBar getActionB() {
+        return actionBar;
     }
-
-
-
 }
+
+
+

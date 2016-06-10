@@ -7,47 +7,33 @@
     android:padding="20dp">
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="8dp"
-        android:text="Register With ..."
-        android:textColor="@color/colorButtonText"
-        android:textSize="18sp" />
-
-    <Button
+    <EditText
+        android:id="@+id/fragment_reg_etEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/button_shape1"
-        android:text="Email"
-        android:textColor="@color/colorButtonText"
-
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/colorText"
         />
 
-    <Button
+    <EditText
+        android:id="@+id/fragment_reg_etPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/button_shape1"
-        android:text="Google"
-        android:textColor="@color/colorButtonText" />
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColor="@color/colorText" />
+
 
     <Button
-        android:layout_width="match_parent"
+        android:id="@+id/fragment_reg_btnLogin"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="right"
         android:layout_marginBottom="8dp"
         android:background="@drawable/button_shape1"
-        android:text="Facebook"
-        android:textColor="@color/colorButtonText" />
+        android:text="Login"
+        android:textColor="@color/colorText" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_shape1"
-        android:text="Twitter"
-        android:textColor="@color/colorButtonText" />
 
 </LinearLayout>

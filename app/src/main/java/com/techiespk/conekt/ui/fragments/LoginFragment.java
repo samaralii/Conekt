@@ -5,24 +5,25 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import com.techiespk.conekt.R;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.Unbinder;
 
 /**
- * Created by samar_000 on 6/6/2016.
+ * Created by samar_000 on 6/8/2016.
  */
-public class RegistrationFragment extends BaseFragment {
+public class LoginFragment extends BaseFragment {
 
+    @BindView(R.id.fragment_reg_etEmail)
+    EditText etEmail;
+    @BindView(R.id.fragment_reg_etPassword)
+    EditText etPassword;
     private Unbinder unbinder;
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
 
     @Nullable
     @Override
@@ -34,6 +35,11 @@ public class RegistrationFragment extends BaseFragment {
     }
 
     private void initComponents() {
+
+    }
+
+    @OnClick(R.id.fragment_reg_btnLogin)
+    void onLoginClick() {
 
     }
 
