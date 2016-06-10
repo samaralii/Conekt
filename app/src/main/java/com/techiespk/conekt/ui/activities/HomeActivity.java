@@ -16,5 +16,6 @@ public class HomeActivity extends DrawerBaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
+        super.onCreateDrawer(this);
     }
 }

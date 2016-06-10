@@ -30,24 +30,28 @@ public class BaseActivity extends AppCompatActivity {
         super.setContentView(layoutResID);
 
         //initializing important things here
-        if (toolbar == null) {
-            toolbar = (Toolbar) findViewById(R.id.app_toolbar);
-        }
+       InitializeToolbar();
 
-        setSupportActionBar(toolbar);
-        actionBar = getSupportActionBar();
+    }
+    protected void InitializeToolbar() {
+        toolbar = (Toolbar) findViewById(R.id.app_toolbar);
 
+        if (toolbar != null)
+            setSupportActionBar(toolbar);
     }
 
 
     public FragmentTransaction openFragment() {
-        fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        return fragmentTransaction;
+        return getSupportFragmentManager().beginTransaction();
 
     }
 
     public ActionBar getActionB() {
         return actionBar;
+    }
+
+    public Toolbar getToolbar() {
+        return toolbar;
     }
 }
 
