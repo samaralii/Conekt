@@ -13,23 +13,11 @@ import com.techiespk.conekt.ui.activities.MainActivity;
  */
 public class BaseFragment extends Fragment {
 
-    FragmentTransaction fragmentTransaction;
-    ActionBar actionBar;
-
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        fragmentTransaction = ((MainActivity) getActivity()).openFragment();
-        actionBar = ((MainActivity) getActivity()).getActionB();
     }
 
-    FragmentTransaction openFragment() {
-        return fragmentTransaction;
-    }
-
-    ActionBar getActionB() {
-        return actionBar;
-    }
 
 
 }
