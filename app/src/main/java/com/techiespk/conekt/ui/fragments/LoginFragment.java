@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 
 import com.techiespk.conekt.R;
+import com.techiespk.conekt.ui.activities.MainActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -19,11 +20,21 @@ import butterknife.Unbinder;
  */
 public class LoginFragment extends BaseFragment {
 
+
+    private Unbinder unbinder;
+    private Listeners listeners;
+
     @BindView(R.id.fragment_reg_etEmail)
     EditText etEmail;
     @BindView(R.id.fragment_reg_etPassword)
     EditText etPassword;
-    private Unbinder unbinder;
+
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        listeners = (MainActivity) getActivity();
+    }
 
     @Nullable
     @Override
@@ -40,12 +51,22 @@ public class LoginFragment extends BaseFragment {
 
     @OnClick(R.id.fragment_reg_btnLogin)
     void onLoginClick() {
+        listeners.onLoginClick();
+    }
 
+    @OnClick(R.id.fragment_reg_btnReg)
+    void onRegClick() {
+        listeners.onRegClick();
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+    }
+
+    public interface Listeners {
+        void onLoginClick();
+        void onRegClick();
     }
 }

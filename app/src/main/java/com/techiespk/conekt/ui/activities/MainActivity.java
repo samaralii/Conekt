@@ -1,11 +1,10 @@
 package com.techiespk.conekt.ui.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
 
 import com.techiespk.conekt.R;
 import com.techiespk.conekt.ui.fragments.LoginFragment;
-import com.techiespk.conekt.ui.fragments.MainFragment;
 import com.techiespk.conekt.ui.fragments.RegistrationFragment;
 
 import butterknife.ButterKnife;
@@ -13,7 +12,7 @@ import butterknife.ButterKnife;
 /**
  * Created by samar_000 on 6/6/2016.
  */
-public class MainActivity extends BaseActivity implements MainFragment.Listeners {
+public class MainActivity extends BaseActivity implements LoginFragment.Listeners {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -25,28 +24,22 @@ public class MainActivity extends BaseActivity implements MainFragment.Listeners
 
     private void initComponents() {
         //Open Main Fragment
-        openFragment().replace(R.id.activity_main_container, new MainFragment()).commit();
+        openFragment().replace(R.id.activity_main_container, new LoginFragment()).commit();
 
     }
 
-
     @Override
     public void onLoginClick() {
-        //Open login fragment
-//        openFragment().replace(R.id.activity_main_container, new LoginFragment()).commit();
+                startActivity(new Intent(this, HomeActivity.class));
 
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_right,
-                R.anim.exit_to_right, R.anim.enter_from_left);
-        ft.replace(R.id.activity_main_container, new LoginFragment());
-        ft.commit();
     }
 
     @Override
     public void onRegClick() {
-        //Open Reg fragment
         openFragment().replace(R.id.activity_main_container, new RegistrationFragment()).commit();
     }
+
+
 
 
 }
