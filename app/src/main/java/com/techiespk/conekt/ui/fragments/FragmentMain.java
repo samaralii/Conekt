@@ -7,29 +7,31 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.techiespk.conekt.R;
+import com.techiespk.conekt.ui.activities.MainActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 
 /**
- * Created by samar_000 on 6/6/2016.
+ * Created by samar_000 on 7/26/2016.
  */
-public class RegistrationFragment extends BaseFragment {
+
+public class FragmentMain extends BaseFragment {
 
     private Unbinder unbinder;
-
+    private Listeners listeners;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        listeners = (MainActivity) getActivity();
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_registration, container, false);
+        View view = inflater.inflate(R.layout.fragment_main, container, false);
         unbinder = ButterKnife.bind(this, view);
         initComponents();
         return view;
@@ -39,14 +41,14 @@ public class RegistrationFragment extends BaseFragment {
 
     }
 
-    @OnClick(R.id.fragment_reg_btnReg)
-    void onRegClick() {
-        openFragment(R.id.activity_main_container, new LoginFragment());
+    @OnClick(R.id.fragment_main_btnLogin)
+    void onLoginClick() {
+        listeners.onLoginClick();
     }
 
-    @OnClick(R.id.fragment_reg_tvBack)
-    void onBackClick() {
-        openFragment(R.id.activity_main_container, new FragmentMain());
+    @OnClick(R.id.fragment_main_btnReg)
+    void onRegClick() {
+        listeners.onRegClick();
     }
 
     @Override
@@ -54,4 +56,11 @@ public class RegistrationFragment extends BaseFragment {
         super.onDestroyView();
         unbinder.unbind();
     }
+
+    public interface Listeners {
+        void onLoginClick();
+
+        void onRegClick();
+    }
+
 }

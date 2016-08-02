@@ -1,10 +1,9 @@
 package com.techiespk.conekt.ui.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
 
 import com.techiespk.conekt.R;
+import com.techiespk.conekt.ui.fragments.FragmentMain;
 import com.techiespk.conekt.ui.fragments.LoginFragment;
 import com.techiespk.conekt.ui.fragments.RegistrationFragment;
 
@@ -13,7 +12,7 @@ import butterknife.ButterKnife;
 /**
  * Created by samar_000 on 6/6/2016.
  */
-public class MainActivity extends BaseActivity implements LoginFragment.Listeners {
+public class MainActivity extends BaseActivity implements FragmentMain.Listeners{
 
 
     @Override
@@ -25,14 +24,14 @@ public class MainActivity extends BaseActivity implements LoginFragment.Listener
     }
 
     private void initComponents() {
-//        openFragment(R.id.activity_main_container, new LoginFragment());
-        openFragment(R.id.activity_main_container, new LoginFragment());
+        openFragment(R.id.activity_main_container, new FragmentMain());
 
     }
 
     @Override
     public void onLoginClick() {
-        startActivity(new Intent(this, HomeActivity.class));
+        openFragment(R.id.activity_main_container, new LoginFragment());
+
     }
 
     @Override

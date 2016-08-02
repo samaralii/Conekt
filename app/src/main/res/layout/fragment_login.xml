@@ -3,60 +3,86 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:orientation="vertical"
     android:padding="20dp">
 
 
-    <EditText
-        android:id="@+id/fragment_login_etEmail"
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
+        android:id="@+id/fragment_login_tilEmail"
+        >
+
+        <EditText
+            android:id="@+id/fragment_login_etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/colorText" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fragment_login_tilPassword"
+        android:layout_below="@+id/fragment_login_tilEmail"
+        android:layout_marginTop="@dimen/fields_spacing"
+        android:layout_marginBottom="@dimen/fields_spacing"
+        >
+
+
+        <EditText
+            android:id="@+id/fragment_login_etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textColor="@color/colorText" />
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fragment_login_forgetPassword"
+        android:layout_below="@+id/fragment_login_tilPassword"
+        android:text="Forget Password?"
+        android:layout_marginTop="@dimen/fields_spacing"
+        android:layout_marginBottom="@dimen/fields_spacing"
+        android:padding="6dp"
+        android:layout_alignParentRight="true"
         android:textColor="@color/colorText"
         />
 
-
-    <EditText
-        android:id="@+id/fragment_login_etPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:textColor="@color/colorText"
-        android:layout_below="@+id/fragment_login_etEmail"
-        />
 
 
     <Button
         android:id="@+id/fragment_login_btnLogin"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
+        android:layout_below="@id/fragment_login_forgetPassword"
         android:layout_marginBottom="8dp"
         android:background="@drawable/button_shape1"
         android:text="Login"
-        android:textColor="@color/colorText"
-        android:layout_below="@id/fragment_login_etPassword"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="5dp"
-        />
+        android:textColor="@color/colorText" />
 
 
-    <Button
-        android:id="@+id/fragment_login_btnReg"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/button_shape1"
-        android:text="Register"
+        android:text="Go Back"
+        android:layout_marginTop="@dimen/fields_spacing"
+        android:padding="10dp"
+        android:id="@+id/fragment_login_tvBack"
+        android:layout_below="@id/fragment_login_btnLogin"
+        android:layout_centerHorizontal="true"
         android:textColor="@color/colorText"
-        android:layout_below="@id/fragment_login_etPassword"
-        android:layout_marginRight="5dp"
-        android:layout_toLeftOf="@id/fragment_login_btnLogin"
         />
-
 
 
 </RelativeLayout>

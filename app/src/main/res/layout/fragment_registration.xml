@@ -1,55 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="20dp">
 
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/fragment_reg_etEmail"
+
+        <EditText
+            android:id="@+id/fragment_reg_etUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Username"
+            android:textColor="@color/colorText" />
+
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:textColor="@color/colorText"
-        />
+        android:layout_marginTop="@dimen/fields_spacing"
+        android:layout_marginBottom="@dimen/fields_spacing"
+        >
 
-    <EditText
-        android:id="@+id/fragment_reg_etUsername"
+
+
+        <EditText
+            android:id="@+id/fragment_reg_etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/colorText" />
+
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <EditText
+            android:id="@+id/fragment_reg_etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textColor="@color/colorText" />
+
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Username"
-        android:textColor="@color/colorText"
-        android:layout_below="@+id/fragment_reg_etEmail"
-        />
+        android:layout_marginBottom="@dimen/fields_spacing"
+        android:layout_marginTop="@dimen/fields_spacing"
+        >
 
-    <EditText
-        android:id="@+id/fragment_reg_etPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:textColor="@color/colorText"
-        android:layout_below="@+id/fragment_reg_etUsername"
-        />
+        <EditText
+            android:id="@+id/fragment_reg_etRePassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Re-Password"
+            android:inputType="textPassword"
+            android:textColor="@color/colorText" />
+
+    </android.support.design.widget.TextInputLayout>
+
 
 
 
     <Button
         android:id="@+id/fragment_reg_btnReg"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
         android:layout_marginBottom="8dp"
         android:background="@drawable/button_shape1"
         android:text="Register"
+        android:textColor="@color/colorText" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go Back"
+        android:layout_marginTop="@dimen/fields_spacing"
+        android:padding="10dp"
+        android:id="@+id/fragment_reg_tvBack"
         android:textColor="@color/colorText"
-        android:layout_below="@id/fragment_reg_etPassword"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="5dp"
         />
 
 
-</RelativeLayout>
+</LinearLayout>

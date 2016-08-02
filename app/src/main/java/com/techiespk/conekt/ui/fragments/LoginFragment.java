@@ -1,13 +1,18 @@
 package com.techiespk.conekt.ui.fragments;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TextInputLayout;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
 import com.techiespk.conekt.R;
+import com.techiespk.conekt.ui.activities.HomeActivity;
 import com.techiespk.conekt.ui.activities.MainActivity;
 
 import butterknife.BindView;
@@ -22,18 +27,21 @@ public class LoginFragment extends BaseFragment {
 
 
     private Unbinder unbinder;
-    private Listeners listeners;
 
     @BindView(R.id.fragment_login_etEmail)
     EditText etEmail;
     @BindView(R.id.fragment_login_etPassword)
     EditText etPassword;
 
+    @BindView(R.id.fragment_login_tilEmail)
+    TextInputLayout tilEmail;
+    @BindView(R.id.fragment_login_tilPassword)
+    TextInputLayout tilPassword;
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        listeners = (MainActivity) getActivity();
     }
 
     @Nullable
@@ -51,13 +59,31 @@ public class LoginFragment extends BaseFragment {
 
     @OnClick(R.id.fragment_login_btnLogin)
     void onLoginClick() {
-        listeners.onLoginClick();
+        startActivity(new Intent(getActivity(), HomeActivity.class));
+        getActivity().finish();
     }
 
-    @OnClick(R.id.fragment_login_btnReg)
-    void onRegClick() {
-        listeners.onRegClick();
+    @OnClick(R.id.fragment_login_tvBack)
+    void onBackClick(){
+        openFragment(R.id.activity_main_container, new FragmentMain());
     }
+
+
+    @OnClick(R.id.fragment_login_forgetPassword)
+    void onForgetClick() {
+        AlertDialog dialog =  new AlertDialog.Builder(getActivity())
+                .setTitle("Password Recovery")
+                .setMessage("An email has been sent to your account.")
+                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                }).create();
+
+        dialog.show();
+    }
+
 
     @Override
     public void onDestroyView() {
@@ -65,8 +91,4 @@ public class LoginFragment extends BaseFragment {
         unbinder.unbind();
     }
 
-    public interface Listeners {
-        void onLoginClick();
-        void onRegClick();
-    }
 }

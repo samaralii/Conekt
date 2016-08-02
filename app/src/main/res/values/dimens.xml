@@ -10,4 +10,6 @@
     <dimen name="Text_size_header_1">25sp</dimen>
 
     <dimen name="activity_main_button_margins">200dp</dimen>
+
+    <dimen name="fields_spacing">8dp</dimen>
 </resources>

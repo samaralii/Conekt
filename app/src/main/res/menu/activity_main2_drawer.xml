@@ -16,7 +16,7 @@
             android:title="Favorite Contacts" />
 
         <item
-            android:id="@+id/nav_manage_transaction"
+            android:id="@+id/nav_logout"
             android:title="Log Out" />
 
 

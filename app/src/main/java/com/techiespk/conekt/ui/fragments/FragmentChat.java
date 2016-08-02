@@ -7,17 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.techiespk.conekt.R;
-import com.techiespk.conekt.ui.activities.MainActivity;
 
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import butterknife.Unbinder;
 
 /**
- * Created by samar_000 on 7/25/2016.
+ * Created by samar_000 on 7/26/2016.
  */
 
-public class FragmentProfile extends BaseFragment {
+public class FragmentChat extends BaseFragment {
 
 
     private Unbinder unbinder;
@@ -30,7 +28,7 @@ public class FragmentProfile extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        View view = inflater.inflate(R.layout.fragment_chats, container, false);
         unbinder = ButterKnife.bind(this, view);
         initComponents();
         return view;

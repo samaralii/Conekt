@@ -4,7 +4,7 @@
     <application
         android:name=".AppApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/conekt_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -20,6 +20,8 @@
         </activity>
 
         <activity android:name=".ui.activities.HomeActivity" />
+        <activity android:name=".ui.activities.ChattingActivity" />
+        <activity android:name=".ui.activities.ProfileActivity" />
 
 
     </application>
