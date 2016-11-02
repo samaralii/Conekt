@@ -5,5 +5,6 @@ package com.techiespk.conekt.listeners;
  */
 
 public interface ContactListListener {
-    void onClickContact();
+    void onClickContact(int pos);
+    void onClickShowProfile(int pos);
 }

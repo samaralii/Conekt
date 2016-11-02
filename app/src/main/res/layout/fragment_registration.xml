@@ -6,6 +6,27 @@
     android:orientation="vertical"
     android:padding="20dp">
 
+    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/activity_reg_image"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="8dp"
+        android:src="@mipmap/ic_launcher"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp" />
+
+    <Button
+        android:id="@+id/activity_reg_changeAvatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button_shape1"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:text="Choose Avatar"
+        />
+
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

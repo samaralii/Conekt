@@ -1,5 +1,6 @@
 package com.techiespk.conekt.ui.activities;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.LayoutRes;
@@ -10,6 +11,8 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.techiespk.conekt.R;
 
 /**
@@ -22,10 +25,13 @@ public class BaseActivity extends AppCompatActivity {
     protected FragmentTransaction fragmentTransaction;
 
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
+
+
 
     @Override
     public void setContentView(@LayoutRes int layoutResID) {

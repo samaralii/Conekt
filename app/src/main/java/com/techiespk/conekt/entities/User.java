@@ -15,6 +15,7 @@ public class User implements Parcelable {
     private String email;
     private String username;
     private String uid;
+    private String imageUrl;
     private long createdAt;
 
 
@@ -26,6 +27,7 @@ public class User implements Parcelable {
         email = in.readString();
         username = in.readString();
         uid = in.readString();
+        imageUrl = in.readString();
         createdAt = in.readLong();
     }
 
@@ -40,19 +42,6 @@ public class User implements Parcelable {
             return new User[size];
         }
     };
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(email);
-        dest.writeString(username);
-        dest.writeString(uid);
-        dest.writeLong(createdAt);
-    }
 
     public String getEmail() {
         return email;
@@ -78,11 +67,33 @@ public class User implements Parcelable {
         this.uid = uid;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
     public long getCreatedAt() {
         return createdAt;
     }
 
     public void setCreatedAt(long createdAt) {
         this.createdAt = createdAt;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(email);
+        dest.writeString(username);
+        dest.writeString(uid);
+        dest.writeString(imageUrl);
+        dest.writeLong(createdAt);
     }
 }

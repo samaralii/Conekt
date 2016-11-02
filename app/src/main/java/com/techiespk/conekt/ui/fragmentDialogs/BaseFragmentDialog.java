@@ -1,4 +1,4 @@
-package com.techiespk.conekt.fragmentDialogs;
+package com.techiespk.conekt.ui.fragmentDialogs;
 
 import android.support.v4.app.DialogFragment;
 

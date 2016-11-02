@@ -25,13 +25,11 @@ public class MainActivity extends BaseActivity implements FragmentMain.Listeners
 
     private void initComponents() {
         openFragment(R.id.activity_main_container, new FragmentMain());
-
     }
 
     @Override
     public void onLoginClick() {
         openFragment(R.id.activity_main_container, new LoginFragment());
-
     }
 
     @Override

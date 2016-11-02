@@ -20,8 +20,9 @@
         </activity>
 
         <activity android:name=".ui.activities.HomeActivity" />
-        <activity android:name=".ui.activities.ChattingActivity" />
         <activity android:name=".ui.activities.ProfileActivity" />
+        <activity android:name=".ui.activities.ChooseAvatarActivity" />
+        <activity android:name=".ui.activities.ChatActivity" />
 
 
     </application>
