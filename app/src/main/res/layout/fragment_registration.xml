@@ -1,122 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:padding="20dp">
+    >
 
-    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/activity_reg_image"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="8dp"
-        android:src="@mipmap/ic_launcher"
-        app:civ_border_color="#FF000000"
-        app:civ_border_width="2dp" />
 
-    <Button
-        android:id="@+id/activity_reg_changeAvatar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/button_shape1"
-        android:paddingLeft="4dp"
-        android:paddingRight="4dp"
-        android:text="Choose Avatar"
-        />
-
-    <android.support.design.widget.TextInputLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/activity_reg_image"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="8dp"
+            android:src="@mipmap/ic_launcher"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp" />
+
+        <Button
+            android:id="@+id/activity_reg_changeAvatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/button_shape1"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:text="Choose Avatar"
+            />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
 
-        <EditText
-            android:id="@+id/fragment_reg_etUsername"
+            <EditText
+                android:id="@+id/fragment_reg_etUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Username"
+                android:textColor="@color/colorText" />
+
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Username"
+            android:layout_marginTop="@dimen/fields_spacing"
+            android:layout_marginBottom="@dimen/fields_spacing"
+            >
+
+
+
+            <EditText
+                android:id="@+id/fragment_reg_etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/colorText" />
+
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <EditText
+                android:id="@+id/fragment_reg_etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textColor="@color/colorText" />
+
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/fields_spacing"
+            android:layout_marginTop="@dimen/fields_spacing"
+            >
+
+            <EditText
+                android:id="@+id/fragment_reg_etRePassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Re-Password"
+                android:inputType="textPassword"
+                android:textColor="@color/colorText" />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+
+
+        <Button
+            android:id="@+id/fragment_reg_btnReg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/button_shape1"
+            android:text="Register"
             android:textColor="@color/colorText" />
 
 
-    </android.support.design.widget.TextInputLayout>
-
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/fields_spacing"
-        android:layout_marginBottom="@dimen/fields_spacing"
-        >
-
-
-
-        <EditText
-            android:id="@+id/fragment_reg_etEmail"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Email"
-            android:inputType="textEmailAddress"
-            android:textColor="@color/colorText" />
+            android:text="Go Back"
+            android:layout_marginTop="@dimen/fields_spacing"
+            android:padding="10dp"
+            android:id="@+id/fragment_reg_tvBack"
+            android:textColor="@color/colorText"
+            />
 
 
-    </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
 
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+</ScrollView>
 
-
-        <EditText
-            android:id="@+id/fragment_reg_etPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:textColor="@color/colorText" />
-
-
-    </android.support.design.widget.TextInputLayout>
-
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/fields_spacing"
-        android:layout_marginTop="@dimen/fields_spacing"
-        >
-
-        <EditText
-            android:id="@+id/fragment_reg_etRePassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Re-Password"
-            android:inputType="textPassword"
-            android:textColor="@color/colorText" />
-
-    </android.support.design.widget.TextInputLayout>
-
-
-
-
-    <Button
-        android:id="@+id/fragment_reg_btnReg"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/button_shape1"
-        android:text="Register"
-        android:textColor="@color/colorText" />
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Go Back"
-        android:layout_marginTop="@dimen/fields_spacing"
-        android:padding="10dp"
-        android:id="@+id/fragment_reg_tvBack"
-        android:textColor="@color/colorText"
-        />
-
-
-</LinearLayout>

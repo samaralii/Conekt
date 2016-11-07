@@ -6,8 +6,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -15,12 +15,14 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.techiespk.conekt.R;
+import com.techiespk.conekt.Utilz;
 import com.techiespk.conekt.entities.Chat;
 import com.techiespk.conekt.entities.ChatInfo;
 import com.techiespk.conekt.ui.adapters.ChatAdapter;
 import com.techiespk.conekt.ui.fragments.FragmentContacts;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -40,7 +42,7 @@ public class ChatActivity extends BaseActivity {
     EditText etMessage;
 
     @BindView(R.id.activity_chat_send)
-    Button btnSend;
+    ImageButton btnSend;
 
     private Chat chat;
 
@@ -73,15 +75,18 @@ public class ChatActivity extends BaseActivity {
 
     private void initComponents() {
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        LinearLayoutManager lm = new LinearLayoutManager(this);
+        lm.setStackFromEnd(true);
+
+        recyclerView.setLayoutManager(lm);
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        myRef = database.getReference();
 
 
-        myChatRef = database.getReference("chat");
+        myRef = database.getReference("chat");
+        myChatRef = database.getReference("chat").child(getRefName());
 
-        adapter = new ChatAdapter(chatInfos, this);
+        adapter = new ChatAdapter(chatInfos, this, chat.getSender());
         recyclerView.setAdapter(adapter);
 
 
@@ -93,6 +98,8 @@ public class ChatActivity extends BaseActivity {
                     ChatInfo ci = dataSnapshot.getValue(ChatInfo.class);
 
                     chatInfos.add(ci);
+                    adapter.notifyDataSetChanged();
+                    recyclerView.scrollToPosition(adapter.getItemCount() - 1);
 
 
                 }
@@ -126,11 +133,10 @@ public class ChatActivity extends BaseActivity {
     @OnClick(R.id.activity_chat_send)
     void OnSendClick() {
         if (etMessage.getText().toString().isEmpty()) {
-            btnSend.setEnabled(false);
+            Utilz.tmsg(this, "Please Write Something");
             return;
-        } else {
-            btnSend.setEnabled(true);
         }
+
 
         ChatInfo chatInfo = new ChatInfo();
 
@@ -140,8 +146,11 @@ public class ChatActivity extends BaseActivity {
         chatInfo.setReceiverName(chat.getReceiver().getUsername());
         chatInfo.setSenderName(chat.getSender().getUsername());
 
-        myRef.child("chat").child(getRefName()).setValue(chatInfo);
+        myRef.child(getRefName()).child(new Date().getTime() + "").setValue(chatInfo);
         myRef.push();
+
+
+        etMessage.setText("");
 
 
     }

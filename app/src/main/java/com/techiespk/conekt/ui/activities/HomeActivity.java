@@ -133,7 +133,7 @@ public class HomeActivity extends BaseActivity {
                             startActivity(getIntent());
                             finish();
                         } else if (drawerItem.equals(itemLogOut)) {
-                            startActivity(new Intent(HomeActivity.this, ChooseAvatarActivity.class));
+                            startActivity(new Intent(HomeActivity.this, MainActivity.class));
                         }
 
                         return false;

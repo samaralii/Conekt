@@ -157,7 +157,12 @@ public class FragmentContacts extends BaseFragment implements ContactListListene
     @Override
     public void onClickContact(int pos) {
         Intent i = new Intent(getActivity(), ChatActivity.class);
-        i.putExtra(USER, userArrayList.get(pos));
+
+        Chat chat = new Chat();
+        chat.setReceiver(userArrayList.get(pos));
+        chat.setSender(sender);
+
+        i.putExtra(USER, chat);
         startActivity(i);
     }
 
@@ -165,10 +170,7 @@ public class FragmentContacts extends BaseFragment implements ContactListListene
     public void onClickShowProfile(int pos) {
         ContactProfileDialog dialog = new ContactProfileDialog();
         Bundle b = new Bundle();
-        Chat chat = new Chat();
-        chat.setReceiver(userArrayList.get(pos));
-        chat.setSender(sender);
-        b.putParcelable(USER, chat);
+        b.putParcelable(USER, userArrayList.get(pos));
         dialog.setArguments(b);
         dialog.show(getFragmentManager(), ContactProfileDialog.class.getName());
     }

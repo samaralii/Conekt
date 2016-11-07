@@ -43,6 +43,7 @@ public class LoginFragment extends BaseFragment {
 
     @BindView(R.id.fragment_login_tilEmail)
     TextInputLayout tilEmail;
+
     @BindView(R.id.fragment_login_tilPassword)
     TextInputLayout tilPassword;
 
@@ -68,6 +69,40 @@ public class LoginFragment extends BaseFragment {
     private void initComponents() {
         mAuth = FirebaseAuth.getInstance();
         authStateListener();
+    }
+
+
+    @OnClick(R.id.fragment_login_tilPassword)
+    void onResetPassword() {
+        forgetPassword();
+    }
+
+
+    private void forgetPassword() {
+
+        if (etEmail.getText().toString().trim().isEmpty()) {
+            etEmail.setError("Please Enter Your Email");
+            return;
+        } else {
+            etEmail.setError(null);
+        }
+
+
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        String emailAddress = etEmail.getText().toString().trim();
+
+        auth.sendPasswordResetEmail(emailAddress)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Utilz.tmsg(getActivity(), "Reset Password Email Sent");
+                            Log.d(TAG, "Email sent.");
+                        } else {
+                            Utilz.tmsg(getActivity(), "Failed");
+                        }
+                    }
+                });
     }
 
     private void authStateListener() {
