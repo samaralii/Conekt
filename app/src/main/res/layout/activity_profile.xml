@@ -5,26 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
     <include layout="@layout/include_toolbar" />
-
-
-    <ImageView
-        android:id="@+id/activity_profile_edit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_margin="10dp"
-        android:src="@drawable/ic_action_edit" />
-
-    <ImageView
-        android:id="@+id/activity_profile_done"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_margin="10dp"
-        android:src="@drawable/ic_action_done"
-        android:visibility="gone" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -44,16 +25,17 @@
             app:civ_border_color="#FF000000"
             app:civ_border_width="2dp" />
 
-        <Button
+        <TextView
             android:id="@+id/activity_profile_changeAvatar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:background="@drawable/button_shape1"
             android:paddingLeft="2dp"
             android:paddingRight="2dp"
             android:text="Change Avatar"
-            android:visibility="gone" />
+            android:padding="10dp"
+            android:textColor="#2469ff"
+             />
 
         <TextView
             android:layout_width="wrap_content"
@@ -66,11 +48,20 @@
             android:id="@+id/activity_profile_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/fields_spacing"
-            android:enabled="false"
             android:text="sammieb1"
             android:textColor="@drawable/edit_text_disabled_color"
             android:textSize="25sp" />
+
+
+        <TextView
+            android:id="@+id/activity_profile_changeUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change Username"
+            android:padding="5dp"
+            android:textColor="#2469ff"
+            android:layout_marginBottom="@dimen/fields_spacing"
+            />
 
 
         <TextView
@@ -90,6 +81,16 @@
             android:textColor="@drawable/edit_text_disabled_color"
             android:textSize="25sp" />
 
+        <TextView
+            android:id="@+id/activity_profile_changeEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change Email"
+            android:padding="5dp"
+            android:textColor="#2469ff"
+            android:layout_marginBottom="@dimen/fields_spacing"
+            />
+
         <Button
             android:id="@+id/activity_profile_btnChangePassword"
             android:layout_width="wrap_content"
@@ -97,7 +98,7 @@
             android:background="@drawable/button_shape1"
             android:padding="5dp"
             android:text="Change Password"
-            android:visibility="gone" />
+            />
 
     </LinearLayout>
 
