@@ -40,8 +40,8 @@ public class ProfileActivity extends BaseActivity {
     CircleImageView profileImage;
     @BindView(R.id.activity_profile_username)
     EditText etUsername;
-    @BindView(R.id.activiy_profile_email)
-    EditText etEmail;
+//    @BindView(R.id.activiy_profile_email)
+//    EditText etEmail;
 
 
     private String name;
@@ -75,17 +75,17 @@ public class ProfileActivity extends BaseActivity {
             String uid = user.getUid();
 
             Picasso.with(this).load(user.getPhotoUrl()).into(profileImage);
-            etEmail.setText(user.getEmail());
+//            etEmail.setText(user.getEmail());
             etUsername.setText(user.getDisplayName());
         }
     }
 
-
-    @OnClick(R.id.activity_profile_changeEmail)
-    void onEmailChangedClick() {
-        ChangeEmailDialog dialog = new ChangeEmailDialog();
-        dialog.show(getSupportFragmentManager(), null);
-    }
+//
+//    @OnClick(R.id.activity_profile_changeEmail)
+//    void onEmailChangedClick() {
+//        ChangeEmailDialog dialog = new ChangeEmailDialog();
+//        dialog.show(getSupportFragmentManager(), null);
+//    }
 
 
 

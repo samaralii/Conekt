@@ -64,31 +64,31 @@
             />
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Email"
-            android:textColor="@color/colorText"
-            android:textSize="16sp" />
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Email"-->
+            <!--android:textColor="@color/colorText"-->
+            <!--android:textSize="16sp" />-->
 
-        <EditText
-            android:id="@+id/activiy_profile_email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/fields_spacing"
-            android:enabled="false"
-            android:text="samarali@live.com"
-            android:textColor="@drawable/edit_text_disabled_color"
-            android:textSize="25sp" />
+        <!--<EditText-->
+            <!--android:id="@+id/activiy_profile_email"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="@dimen/fields_spacing"-->
+            <!--android:enabled="false"-->
+            <!--android:text="samarali@live.com"-->
+            <!--android:textColor="@drawable/edit_text_disabled_color"-->
+            <!--android:textSize="25sp" />-->
 
-        <TextView
-            android:id="@+id/activity_profile_changeEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Change Email"
-            android:padding="5dp"
-            android:textColor="#2469ff"
-            android:layout_marginBottom="@dimen/fields_spacing"
+        <!--<TextView-->
+            <!--android:id="@+id/activity_profile_changeEmail"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Change Email"-->
+            <!--android:padding="5dp"-->
+            <!--android:textColor="#2469ff"-->
+            <!--android:layout_marginBottom="@dimen/fields_spacing"-->
             />
 
         <Button

@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "328365579870",
-    "firebase_url": "https://conekt-40403.firebaseio.com",
-    "project_id": "conekt-40403",
-    "storage_bucket": "conekt-40403.appspot.com"
+    "project_number": "522350936761",
+    "firebase_url": "https://luminous-inferno-9144.firebaseio.com",
+    "project_id": "luminous-inferno-9144",
+    "storage_bucket": "luminous-inferno-9144.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:328365579870:android:370003fe7011dd55",
+        "mobilesdk_app_id": "1:522350936761:android:370003fe7011dd55",
         "android_client_info": {
           "package_name": "com.techiespk.conekt"
         }
       },
       "oauth_client": [
         {
-          "client_id": "328365579870-l9j0tfebfao19phku174on3isph468qs.apps.googleusercontent.com",
+          "client_id": "522350936761-02i1flosrl1606etufruprh9rtrpo3mc.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAhNKRwUprSQ7ljAlRcZ6eurPow1GlGgU8"
+          "current_key": "AIzaSyAhJh0GsMVLQm0ZlX8mtJZh8Ch4gIPZcNY"
         }
       ],
       "services": {

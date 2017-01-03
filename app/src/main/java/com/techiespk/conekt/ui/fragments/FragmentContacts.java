@@ -77,6 +77,11 @@ public class FragmentContacts extends BaseFragment implements ContactListListene
         myRef = db.getReference("users");
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
+
+
+
+
+
         contactList.hasFixedSize();
         contactList.setLayoutManager(new LinearLayoutManager(getActivity()));
 
